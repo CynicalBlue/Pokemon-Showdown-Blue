@@ -5682,6 +5682,40 @@ export const Items: {[itemid: string]: ItemData} = {
 		num: 80,
 		gen: 2,
 	},
+	supersuit: {
+		name: "Super Suit",
+		spritenum: 581,
+		fling: {
+			basePower: 200,
+		},
+		onModifyAtkPriority: 1,
+		onModifyAtk(atk, pokemon) {
+			if (pokemon.baseSpecies.baseSpecies === 'Ledian'){
+				return this.chainModify(1.5);
+			}
+		},
+		onModifyDefPriority: 1,
+		onModifyDef(def, pokemon) {
+			if (pokemon.baseSpecies.baseSpecies === 'Ledian'){
+				return this.chainModify(1.5);
+			}
+		},
+		onModifySpAPriority: 1,
+		onModifySpA(spa, pokemon) {
+			if (pokemon.baseSpecies.baseSpecies === 'Ledian'){
+				return this.chainModify(1.5);
+			}
+		},
+		onModifySpDPriority: 1,
+		onModifySpD(spd, pokemon) {
+			if (pokemon.baseSpecies.baseSpecies === 'Ledian'){
+				return this.chainModify(1.5);
+			}
+		},
+		itemUser: ["Ledian"],
+		num: 1123,
+		gen: 9,
+	},
 	swampertite: {
 		name: "Swampertite",
 		spritenum: 612,

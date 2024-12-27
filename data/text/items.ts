@@ -1766,6 +1766,11 @@ export const ItemsText: {[k: string]: ItemText} = {
 		desc: "Evolves Gloom into Bellossom, Sunkern into Sunflora, Cottonee into Whimsicott, Petilil into Lilligant, and Helioptile into Heliolisk when used.",
 		shortDesc: "Evolves certain species of Pokemon when used.",
 	},
+	supersuit: {
+		name: "Super Suit",
+		desc: "If held by Ledian: Atk, SpA, Def, and SpD are increased by 1.5x.",
+		shortDesc: "Atk, SpA, Def, SpD 1.5x.  Ledian only.",
+	},
 	swampertite: {
 		name: "Swampertite",
 		desc: "If held by a Swampert, this item allows it to Mega Evolve in battle.",
