@@ -553,6 +553,17 @@ const Abilities = {
     rating: 3,
     num: 34
   },
+  circulation: {
+    onAfterMoveSecondarySelfPriority: -1,
+    onAfterMoveSecondarySelf(pokemon, target, move) {
+      if (move.totalDamage && !pokemon.forceSwitchFlag) {
+        this.heal(move.totalDamage / 2, pokemon);
+      }
+    },
+    name: "Circulation",
+    rating: 4,
+    num: 218
+  },
   clearbody: {
     onTryBoost(boost, target, source, effect) {
       if (source && target === source)

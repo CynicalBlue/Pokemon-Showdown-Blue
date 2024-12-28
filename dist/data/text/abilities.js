@@ -236,6 +236,12 @@ const AbilitiesText = {
       desc: "If Sunny Day is active, this Pokemon's Speed is doubled."
     }
   },
+  circulation: {
+    name: "Circulation",
+    desc: "After an attack, holder gains 1/2 of the damage in HP dealt to other Pokemon.",
+    shortDesc: "Attacks done heal self 1/2 of damage.",
+    heal: "  [POKEMON] restored some HP with Circulation!"
+  },
   clearbody: {
     name: "Clear Body",
     shortDesc: "Prevents other Pokemon from lowering this Pokemon's stat stages."
