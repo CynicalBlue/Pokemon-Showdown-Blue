@@ -93,7 +93,8 @@ const MovesText = {
   },
   aerialace: {
     name: "Aerial Ace",
-    shortDesc: "This move does not check accuracy."
+    desc: "This move is always a critical hit unless the target is under the effect of Lucky Chant or has the Battle Armor or Shell Armor Abilities, and this move does not check accuracy.",
+    shortDesc: "Always results in a critical hit and will always hit."
   },
   aeroblast: {
     name: "Aeroblast",
@@ -5472,7 +5473,8 @@ const MovesText = {
   },
   shadowpunch: {
     name: "Shadow Punch",
-    shortDesc: "This move does not check accuracy."
+    desc: "This move is always a critical hit unless the target is under the effect of Lucky Chant or has the Battle Armor or Shell Armor Abilities, and this move does not check accuracy.",
+    shortDesc: "Always results in a critical hit and will always hit."
   },
   shadowsneak: {
     name: "Shadow Sneak",
@@ -7003,6 +7005,11 @@ const MovesText = {
     name: "Venoshock",
     desc: "Power doubles if the target is poisoned.",
     shortDesc: "Power doubles if the target is poisoned."
+  },
+  vibratingpunch: {
+    name: "Vibrating Punch",
+    desc: "Has a 30% chance to torment the target.",
+    shortDesc: "30% chance to torment the target."
   },
   victorydance: {
     name: "Victory Dance",
