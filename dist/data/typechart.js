@@ -234,7 +234,7 @@ const TypeChart = {
   ghost: {
     damageTaken: {
       trapped: 3,
-      Bug: 2,
+      Bug: 0,
       Dark: 1,
       Dragon: 0,
       Electric: 0,
@@ -279,7 +279,7 @@ const TypeChart = {
       Rock: 2,
       Sound: 0,
       Space: 2,
-      Steel: 2,
+      Steel: 0,
       Water: 2
     },
     HPivs: { atk: 30, spa: 30 },
@@ -412,7 +412,7 @@ const TypeChart = {
       Rock: 0,
       Sound: 0,
       Space: 0,
-      Steel: 2,
+      Steel: 0,
       Water: 0
     },
     HPivs: { atk: 30, spe: 30 },
@@ -479,18 +479,18 @@ const TypeChart = {
       Electric: 2,
       Fairy: 0,
       Fighting: 2,
-      Fire: 2,
+      Fire: 1,
       Flying: 0,
       Ghost: 2,
       Grass: 1,
       Ground: 0,
       Ice: 2,
       Normal: 0,
-      Poison: 2,
+      Poison: 0,
       Psychic: 1,
       Rock: 2,
       Sound: 3,
-      Space: 2,
+      Space: 0,
       Steel: 1,
       Water: 2
     }

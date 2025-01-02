@@ -798,8 +798,8 @@ const AbilitiesText = {
   },
   ironfist: {
     name: "Iron Fist",
-    desc: "This Pokemon's punch-based attacks have their power multiplied by 1.5.",
-    shortDesc: "This Pokemon's punch-based attacks have 1.5x power. Sucker Punch is not boosted."
+    desc: "This Pokemon's punch-based attacks have their power multiplied by 1.3.",
+    shortDesc: "This Pokemon's punch-based attacks have 1.3x power. Sucker Punch is not boosted."
   },
   justified: {
     name: "Justified",
@@ -2141,6 +2141,10 @@ const AbilitiesText = {
     },
     transform: "Zen Mode triggered!",
     transformEnd: "Zen Mode ended!"
+  },
+  zephyr: {
+    name: "Zephyr",
+    shortDesc: "On switch-in, this Pokemon summons Tailwind."
   },
   zerotohero: {
     name: "Zero to Hero",

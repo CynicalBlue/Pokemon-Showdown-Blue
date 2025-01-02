@@ -2172,7 +2172,7 @@ const Abilities = {
     onBasePower(basePower, attacker, defender, move) {
       if (move.flags["punch"]) {
         this.debug("Iron Fist boost");
-        return this.chainModify(1.5);
+        return this.chainModify(1.3);
       }
     },
     name: "Iron Fist",
@@ -5543,6 +5543,25 @@ const Abilities = {
     name: "Zen Mode",
     rating: 0,
     num: 161
+  },
+  zephyr: {
+    onStart(pokemon) {
+      let activated = false;
+      for (const sideCondition of ["tailwind"]) {
+        for (const side of [pokemon.side]) {
+          if (!side.getSideCondition(sideCondition)) {
+            if (!activated) {
+              this.add("-activate", pokemon, "ability: Zephyr");
+              activated = true;
+            }
+            side.addSideCondition("tailwind");
+          }
+        }
+      }
+    },
+    name: "Zephyr",
+    rating: 4,
+    num: 269
   },
   zerotohero: {
     onSwitchOut(pokemon) {
