@@ -15130,18 +15130,26 @@ export const Moves: {[moveid: string]: MoveData} = {
 	razorwind: {
 		num: 13,
 		accuracy: 100,
-		basePower: 80,
+		basePower: 120,
 		category: "Special",
-		isNonstandard: "Past",
 		name: "Razor Wind",
 		pp: 10,
 		priority: 0,
-		flags: {charge: 1, protect: 1, mirror: 1, nosleeptalk: 1, failinstruct: 1},
+		flags: {charge: 1, protect: 1, mirror: 1, nosleeptalk: 1, failinstruct: 1, wind: 1},
 		onTryMove(attacker, defender, move) {
 			if (attacker.removeVolatile(move.id)) {
 				return;
 			}
 			this.add('-prepare', attacker, move.name);
+			for (const sideCondition of ['tailwind']) {
+				for (const side of [attacker.side]) {
+					if (side.getSideCondition(sideCondition)) {				
+						this.attrLastMove('[still]');
+						this.addMove('-anim', attacker, move.name, defender);
+						return;
+					}
+				}
+			}
 			if (!this.runEvent('ChargeMove', attacker, defender, move)) {
 				return;
 			}
@@ -15436,7 +15444,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	reverberation: {
 		num: 586,
 		accuracy: 100,
-		basePower: 100,
+		basePower: 120,
 		category: "Physical",
 		name: "Reverberation",
 		pp: 10,
@@ -19479,9 +19487,9 @@ export const Moves: {[moveid: string]: MoveData} = {
 			durationCallback(target, source, effect) {
 				if (source?.hasAbility('persistent')) {
 					this.add('-activate', source, 'ability: Persistent', '[move] Tailwind');
-					return 6;
+					return 7;
 				}
-				return 4;
+				return 5;
 			},
 			onSideStart(side, source) {
 				if (source?.hasAbility('persistent')) {

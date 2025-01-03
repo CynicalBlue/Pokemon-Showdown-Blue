@@ -2863,6 +2863,14 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 		rating: 1.5,
 		num: 12,
 	},
+	oppressive: {
+		onStart(source) {
+			this.field.addPseudoWeather('gravity');
+		},
+		name: "Oppressive",
+		rating: 4,
+		num: 269,
+	},
 	opportunist: {
 		onFoeAfterBoost(boost, target, source, effect) {
 			if (effect?.name === 'Opportunist' || effect?.name === 'Mirror Herb') return;
@@ -5332,10 +5340,6 @@ export const Abilities: {[abilityid: string]: AbilityData} = {
 			for (const sideCondition of ['tailwind']) {
 				for (const side of [pokemon.side]) {
 					if (!side.getSideCondition(sideCondition)) {
-						if (!activated) {
-							this.add('-activate', pokemon, 'ability: Zephyr');
-							activated = true;
-						}
 						side.addSideCondition('tailwind');
 					}
 				}
