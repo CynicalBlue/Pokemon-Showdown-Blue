@@ -1001,10 +1001,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 						delete source.volatiles['lockedmove'];
 					}
 				}
-				return this.NOT_FAIL;
-			},
-			onHit(target, source, move) {
-				if (move.isZOrMaxPowered) {
+				if (move.flags['protect']) {
 					if (!this.canSwitch(target.side) || target.forceSwitchFlag || target.switchFlag) return;
 					for (const side of this.sides) {
 						for (const active of side.active) {
@@ -1012,8 +1009,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 						}
 					}
 					target.switchFlag = true;
-					this.add('-activate', target, 'ability: Emergency Exit');
-				}
+					this.add('-activate', target, 'ability: Emergency Exit');				}
+				return this.NOT_FAIL;
 			},
 		},
 		secondary: null,
