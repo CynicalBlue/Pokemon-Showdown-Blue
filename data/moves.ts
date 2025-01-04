@@ -961,16 +961,16 @@ export const Moves: {[moveid: string]: MoveData} = {
 		contestType: "Clever",
 	},
 	bananaguard: {
-		num: 575,
-		accuracy: 100,
+		num: 596,
+		accuracy: true,
 		basePower: 0,
 		category: "Status",
 		name: "Banana Guard",
-		pp: 20,
-		priority: -6,
+		pp: 10,
+		priority: 4,
 		flags: {noassist: 1, failcopycat: 1},
 		stallingMove: true,
-		volatileStatus: 'protect',
+		volatileStatus: 'bananaguard',
 		onPrepareHit(pokemon) {
 			return !!this.queue.willAct() && this.runEvent('StallMove', pokemon);
 		},
@@ -980,7 +980,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 		condition: {
 			duration: 1,
 			onStart(target) {
-				this.add('-singleturn', target, 'Protect');
+				this.add('-singleturn', target, 'move: Protect');
 			},
 			onTryHitPriority: 3,
 			onTryHit(target, source, move) {
@@ -1003,13 +1003,22 @@ export const Moves: {[moveid: string]: MoveData} = {
 				}
 				return this.NOT_FAIL;
 			},
+			onHit(target, source, move) {
+				if (!this.canSwitch(target.side) || target.forceSwitchFlag || target.switchFlag) return;
+				for (const side of this.sides) {
+					for (const active of side.active) {
+						active.switchFlag = false;
+					}
+				}
+				target.switchFlag = true;
+				this.add('-activate', target, 'move: Banana Guard');
+			},
 		},
-		selfSwitch: true,
 		secondary: null,
-		target: "normal",
+		target: "self",
 		type: "Grass",
-		zMove: {effect: 'healreplacement'},
-		contestType: "Cool",
+		zMove: {boost: {def: 1}},
+		contestType: "Tough",
 	},
 	banefulbunker: {
 		num: 661,

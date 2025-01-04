@@ -1807,7 +1807,7 @@ const Abilities = {
         return this.chainModify(1.5);
     },
     name: "Honest",
-    rating: 3.5,
+    rating: 4,
     num: 125
   },
   honeygather: {
@@ -1871,8 +1871,8 @@ const Abilities = {
       if (move?.type === "Water")
         return priority + 1;
     },
-    name: "Hydraulic=",
-    rating: 2.5,
+    name: "Hydraulic",
+    rating: 3.5,
     num: 177
   },
   hypercutter: {

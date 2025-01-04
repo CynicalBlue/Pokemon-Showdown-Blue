@@ -42053,6 +42053,7 @@ const Learnsets = {
       aircutter: ["9M", "4T"],
       airslash: ["9M", "9L36", "7L36", "6L36", "5L51", "4L47", "4S0"],
       attract: ["7M", "6M", "5M", "4M", "3M"],
+      bananaguard: ["8M"],
       bestow: ["7L46", "6L1", "5L57"],
       bodypress: ["9M"],
       bodyslam: ["9M", "9L41", "7L41", "6L37", "5L37", "4L37", "3T", "3L37"],
