@@ -1009,7 +1009,8 @@ export const Moves: {[moveid: string]: MoveData} = {
 						}
 					}
 					target.switchFlag = true;
-					this.add('-activate', target, 'ability: Emergency Exit');				}
+					this.add('-activate', target, 'move: Banana Guard');				
+				}
 				return this.NOT_FAIL;
 			},
 		},
