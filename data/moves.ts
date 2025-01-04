@@ -1004,14 +1004,16 @@ export const Moves: {[moveid: string]: MoveData} = {
 				return this.NOT_FAIL;
 			},
 			onHit(target, source, move) {
-				if (!this.canSwitch(target.side) || target.forceSwitchFlag || target.switchFlag) return;
-				for (const side of this.sides) {
-					for (const active of side.active) {
-						active.switchFlag = false;
+				if (move.isZOrMaxPowered) {
+					if (!this.canSwitch(target.side) || target.forceSwitchFlag || target.switchFlag) return;
+					for (const side of this.sides) {
+						for (const active of side.active) {
+							active.switchFlag = false;
+						}
 					}
+					target.switchFlag = true;
+					this.add('-activate', target, 'ability: Emergency Exit');
 				}
-				target.switchFlag = true;
-				this.add('-activate', target, 'move: Banana Guard');
 			},
 		},
 		secondary: null,

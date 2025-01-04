@@ -349,8 +349,8 @@ const MovesText = {
   },
   bananaguard: {
     name: "Banana Guard",
-    desc: "Protects first.  If this move is successful and the user has not fainted, the user then switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members.",
-    shortDesc: "User protects, then switches out at end of turn."
+    desc: "Protects first.  If the protect is hit and the user has not fainted, the user then switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members.",
+    shortDesc: "User protects, then switches out if hit."
   },
   banefulbunker: {
     name: "Baneful Bunker",
@@ -6512,11 +6512,11 @@ const MovesText = {
   },
   tailwind: {
     name: "Tailwind",
-    desc: "For 4 turns, the user and its party members have their Speed doubled. Fails if this move is already in effect for the user's side.",
-    shortDesc: "For 4 turns, allies' Speed is doubled.",
+    desc: "For 5 turns, the user and its party members have their Speed doubled. Wind moves get 1.5x power on the user's side.  Fails if this move is already in effect for the user's side.",
+    shortDesc: "For 5 turns, allies' Speed is doubled.  Wind moves 1.5x power.",
     gen4: {
-      desc: "For 3 turns, the user and its party members have their Speed doubled. Fails if this move is already in effect for the user's side.",
-      shortDesc: "For 3 turns, allies' Speed is doubled."
+      desc: "For 4 turns, the user and its party members have their Speed doubled. Fails if this move is already in effect for the user's side.",
+      shortDesc: "For 4 turns, allies' Speed is doubled."
     },
     start: "  The Tailwind blew from behind [TEAM]!",
     end: "  [TEAM]'s Tailwind petered out!"
