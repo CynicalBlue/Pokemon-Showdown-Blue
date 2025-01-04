@@ -331,6 +331,11 @@ export const MovesText: {[k: string]: MoveText} = {
 		desc: "This move summons Reflect for 5 turns upon use.",
 		shortDesc: "Summons Reflect.",
 	},
+	bananaguard: {
+		name: "Banana Guard",
+		desc: "Protects first.  If this move is successful and the user has not fainted, the user then switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if there are no unfainted party members.",
+		shortDesc: "User protects, then switches out at end of turn.",
+	},
 	banefulbunker: {
 		name: "Baneful Bunker",
 		desc: "The user is protected from most attacks made by other Pokemon during this turn, and Pokemon making contact with the user become poisoned. This move has a 1/X chance of being successful, where X starts at 1 and triples each time this move is successfully used. X resets to 1 if this move fails, if the user's last move used is not Baneful Bunker, Detect, Endure, King's Shield, Max Guard, Obstruct, Protect, Quick Guard, Silk Trap, Spiky Shield, or Wide Guard, or if it was one of those moves and the user's protection was broken. Fails if the user moves last this turn.",
@@ -2675,8 +2680,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	gravity: {
 		name: "Gravity",
-		desc: "For 5 turns, the evasiveness of all active Pokemon is multiplied by 0.6. At the time of use, Bounce, Fly, Magnet Rise, Sky Drop, and Telekinesis end immediately for all active Pokemon. During the effect, Bounce, Fly, Flying Press, High Jump Kick, Jump Kick, Magnet Rise, Sky Drop, Splash, and Telekinesis are prevented from being used by all active Pokemon. Ground-type attacks, Spikes, Toxic Spikes, Sticky Web, and the Arena Trap Ability can affect Flying types or Pokemon with the Levitate Ability. Fails if this move is already in effect.",
-		shortDesc: "5 turns: no Ground immunities, 1.67x accuracy.",
+		desc: "For 5 turns, the evasiveness of all active Pokemon is multiplied by 0.5. At the time of use, Bounce, Fly, Magnet Rise, Sky Drop, and Telekinesis end immediately for all active Pokemon. During the effect, Bounce, Fly, Flying Press, High Jump Kick, Jump Kick, Magnet Rise, Sky Drop, Splash, and Telekinesis are prevented from being used by all active Pokemon. Ground-type attacks, Spikes, Toxic Spikes, Sticky Web, and the Arena Trap Ability can affect Flying types or Pokemon with the Levitate Ability. Fails if this move is already in effect.",
+		shortDesc: "5 turns: no Ground immunities, 2x accuracy.",
 		gen7: {
 			desc: "For 5 turns, the evasiveness of all active Pokemon is multiplied by 0.6. At the time of use, Bounce, Fly, Magnet Rise, Sky Drop, and Telekinesis end immediately for all active Pokemon. During the effect, Bounce, Fly, Flying Press, High Jump Kick, Jump Kick, Magnet Rise, Sky Drop, Splash, and Telekinesis are prevented from being used by all active Pokemon. Ground-type attacks, Spikes, Toxic Spikes, Sticky Web, and the Arena Trap Ability can affect Flying types or Pokemon with the Levitate Ability. Fails if this move is already in effect. Relevant Z-Powered moves can still be selected, but will be prevented at execution during this effect.",
 		},
@@ -6472,8 +6477,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	superacid: {
 		name: "Super Acid",
-		desc: "Has a 10% chance to poison the target. This move's type effectiveness against Steel, Rock, and Ice is changed to be super effective no matter what this move's type is.",
-		shortDesc: "10% chance to psn. Super effective on Steel, Rock, Ice.",
+		desc: "This move's type effectiveness against Steel, Rock, and Ice is changed to be super effective no matter what this move's type is.  Ignores any immunites the defending Pokemon has for Poision type attacks.",
+		shortDesc: "Super effective on Steel, Rock, Ice.  Ignores immunities.",
 	},
 	superblast: {
 		name: "Super Blast",

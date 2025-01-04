@@ -1142,6 +1142,10 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		name: "Opportunist",
 		shortDesc: "When an opposing Pokemon has a stat stage raised, this Pokemon copies the effect.",
 	},
+	oppressive: {
+		name: "Oppressive",
+		shortDesc: "On switch-in, this Pokemon summons Gravity.",
+	},
 	orichalcumpulse: {
 		name: "Orichalcum Pulse",
 		shortDesc: "On switch-in, summons Sunny Day. During Sunny Day, Attack is 1.3333x.",

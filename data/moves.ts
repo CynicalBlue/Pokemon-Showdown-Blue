@@ -960,6 +960,57 @@ export const Moves: {[moveid: string]: MoveData} = {
 		type: "Dark",
 		contestType: "Clever",
 	},
+	bananaguard: {
+		num: 575,
+		accuracy: 100,
+		basePower: 0,
+		category: "Status",
+		name: "Banana Guard",
+		pp: 20,
+		priority: -6,
+		flags: {noassist: 1, failcopycat: 1},
+		stallingMove: true,
+		volatileStatus: 'protect',
+		onPrepareHit(pokemon) {
+			return !!this.queue.willAct() && this.runEvent('StallMove', pokemon);
+		},
+		onHit(pokemon) {
+			pokemon.addVolatile('stall');
+		},
+		condition: {
+			duration: 1,
+			onStart(target) {
+				this.add('-singleturn', target, 'Protect');
+			},
+			onTryHitPriority: 3,
+			onTryHit(target, source, move) {
+				if (!move.flags['protect']) {
+					if (['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) return;
+					if (move.isZ || move.isMax) target.getMoveHitData(move).zBrokeProtect = true;
+					return;
+				}
+				if (move.smartTarget) {
+					move.smartTarget = false;
+				} else {
+					this.add('-activate', target, 'move: Protect');
+				}
+				const lockedmove = source.getVolatile('lockedmove');
+				if (lockedmove) {
+					// Outrage counter is reset
+					if (source.volatiles['lockedmove'].duration === 2) {
+						delete source.volatiles['lockedmove'];
+					}
+				}
+				return this.NOT_FAIL;
+			},
+		},
+		selfSwitch: true,
+		secondary: null,
+		target: "normal",
+		type: "Grass",
+		zMove: {effect: 'healreplacement'},
+		contestType: "Cool",
+	},
 	banefulbunker: {
 		num: 661,
 		accuracy: true,
@@ -7985,7 +8036,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 			},
 			onModifyAccuracy(accuracy) {
 				if (typeof accuracy !== 'number') return;
-				return this.chainModify([6840, 4096]);
+				return this.chainModify([2]);
 			},
 			onDisableMove(pokemon) {
 				for (const moveSlot of pokemon.moveSlots) {
@@ -9770,7 +9821,7 @@ export const Moves: {[moveid: string]: MoveData} = {
 	inferno: {
 		num: 517,
 		accuracy: 50,
-		basePower: 100,
+		basePower: 120,
 		category: "Special",
 		name: "Inferno",
 		pp: 5,
@@ -19072,20 +19123,22 @@ export const Moves: {[moveid: string]: MoveData} = {
 	superacid: {
 		num: 573,
 		accuracy: 100,
-		basePower: 60,
+		basePower: 70,
 		category: "Special",
 		name: "Superacid",
 		pp: 20,
 		priority: 0,
 		flags: {protect: 1, mirror: 1},
+		onModifyMove(move) {
+			if (!move.ignoreImmunity) move.ignoreImmunity = {};
+			if (move.ignoreImmunity !== true) {
+				move.ignoreImmunity['Poison'] = true;
+			}
+		},	
 		onEffectiveness(typeMod, target, type) {
 			if (type === 'Steel') return 1;
 			if (type === 'Rock') return 1;
 			if (type === 'Ice') return 1;
-		},
-		secondary: {
-			chance: 10,
-			status: 'psn',
 		},
 		target: "normal",
 		type: "Poison",
@@ -19500,6 +19553,12 @@ export const Moves: {[moveid: string]: MoveData} = {
 			},
 			onModifySpe(spe, pokemon) {
 				return this.chainModify(2);
+			},
+			onWeatherModifyDamage(damage, attacker, defender, move) {
+				if (move.flags['wind']) {
+					this.debug('Tailwind wind boost');
+					return this.chainModify(1.5);
+				}
 			},
 			onSideResidualOrder: 26,
 			onSideResidualSubOrder: 5,

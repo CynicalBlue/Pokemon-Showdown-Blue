@@ -1519,6 +1519,26 @@ const Items = {
     num: 108,
     gen: 4
   },
+  earmuffs: {
+    name: "Ear Muffs",
+    spritenum: 604,
+    fling: {
+      basePower: 100
+    },
+    onTryHit(target, source, move) {
+      if (target !== source && move.flags["sound"]) {
+        this.add("-immune", target, "[from] item: Ear Muffs");
+        return null;
+      }
+    },
+    onAllyTryHitSide(target, source, move) {
+      if (move.flags["sound"]) {
+        this.add("-immune", this.effectState.target, "[from] item: Ear Muffs");
+      }
+    },
+    num: 1125,
+    gen: 9
+  },
   earthplate: {
     name: "Earth Plate",
     spritenum: 117,
