@@ -49351,7 +49351,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			falseswipe: ["8M", "7M", "6M", "5M", "4M"],
 			feintattack: ["7E", "6E", "5E", "4E"],
 			fellstinger: ["8L6", "7L47", "6L47"],
-			firstimpression: ["8M"];
+			firstimpression: ["8M"],
 			flash: ["6M", "5M", "4M"],
 			fling: ["8M", "7M", "6M", "5M", "4M"],
 			frustration: ["7M", "6M", "5M", "4M"],
