@@ -14978,7 +14978,6 @@ const Learnsets = {
       helpinghand: ["8M", "8L1", "8V", "7T", "6T", "5T", "4T", "3S0"],
       hiddenpower: ["7M", "7V", "6M", "5M", "4M", "3M"],
       icepunch: ["8M", "8L24", "8V", "7T", "7L36", "7V", "6T", "6L36", "5T", "5L36", "4T", "4L31", "3T", "3L26"],
-      jetpunch: ["8M"],
       laserfocus: ["7T"],
       leer: ["8V"],
       lowkick: ["8M", "7T", "6T", "5T", "4T"],

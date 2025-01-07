@@ -990,7 +990,7 @@ const Moves = {
     contestType: "Clever"
   },
   bananaguard: {
-    num: 596,
+    num: 661,
     accuracy: true,
     basePower: 0,
     category: "Status",
@@ -1031,10 +1031,7 @@ const Moves = {
             delete source.volatiles["lockedmove"];
           }
         }
-        return this.NOT_FAIL;
-      },
-      onHit(target, source, move) {
-        if (move.isZOrMaxPowered) {
+        if (move.flags["protect"]) {
           if (!this.canSwitch(target.side) || target.forceSwitchFlag || target.switchFlag)
             return;
           for (const side of this.sides) {
@@ -1043,8 +1040,9 @@ const Moves = {
             }
           }
           target.switchFlag = true;
-          this.add("-activate", target, "ability: Emergency Exit");
+          this.add("-activate", target, "move: Banana Guard");
         }
+        return this.NOT_FAIL;
       }
     },
     secondary: null,

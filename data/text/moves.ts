@@ -2043,8 +2043,8 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	flabbergast: {
 		name: "Flabbergast",
-		desc: "Lowers opponent's speed by one stage and confuses them. If this move is successful, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if the target's Speed stat stage was unchanged, or if there are no unfainted party members.",
-		shortDesc: "Lowers target's Spe by 1 and confuses the opponent. User switches.",
+		desc: "Torments and confuses target. If this move is successful, the user switches out even if it is trapped and is replaced immediately by a selected party member. The user does not switch out if the target's Speed stat stage was unchanged, or if there are no unfainted party members.",
+		shortDesc: "Self-switch.  Torments and confuses target.",
 
 		heal: "#memento",
 		switchOut: "#uturn",
@@ -6477,12 +6477,12 @@ export const MovesText: {[k: string]: MoveText} = {
 	},
 	superacid: {
 		name: "Super Acid",
-		desc: "This move's type effectiveness against Steel, Rock, and Ice is changed to be super effective no matter what this move's type is.  Ignores any immunites the defending Pokemon has for Poision type attacks.",
-		shortDesc: "Super effective on Steel, Rock, Ice.  Ignores immunities.",
+		desc: "Becomes a Physical move if user's Atk is more than user's SpA.  This move's type effectiveness against Steel, Rock, and Ice is changed to be super effective no matter what this move's type is.  Ignores any immunites the defending Pokemon has for Poision type attacks.",
+		shortDesc: "Phys. if Atk > SpA.  Super effective on Steel, Rock, Ice.  Ignores immunities.",
 	},
 	superblast: {
 		name: "Super Blast",
-		desc: "No additional effect.",
+		desc: "No additional effect. Hits adjacent foes.",
 		shortDesc: "No additional effect. Hits adjacent foes.",
 	},
 	superfang: {

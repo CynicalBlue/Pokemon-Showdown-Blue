@@ -440,6 +440,12 @@ export const ItemsText: {[k: string]: ItemText} = {
 		desc: "Evolves Murkrow into Honchkrow, Misdreavus into Mismagius, Lampent into Chandelure, and Doublade into Aegislash when used.",
 		shortDesc: "Evolves certain species of Pokemon when used.",
 	},
+	earmuffs: {
+		name: "Earmuffs",
+		desc: "Holder is immune to Sound-type attacks.",
+
+		start: "  [POKEMON] protects its ears with Earmuffs!",
+	},
 	earthplate: {
 		name: "Earth Plate",
 		desc: "Holder's Ground-type attacks have 1.2x power. Judgment is Ground type.",

@@ -400,6 +400,11 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		desc: "On switch-in, this Pokemon's Attack or Special Attack is raised by 1 stage based on the weaker combined defensive stat of all opposing Pokemon. Attack is raised if their Defense is lower, and Special Attack is raised if their Special Defense is the same or lower.",
 		shortDesc: "On switch-in, Attack or Sp. Atk is raised 1 stage based on the foes' weaker Defense.",
 	},
+	draconic: {
+		name: "Thick Fat",
+		desc: "This Pokemon's offensive stat is multiplied by 1.5 while using a Dragon-type attack.  If a Pokemon uses a Fire-, Water-, Grass-, Electric-, or Space-type attack against this Pokemon, that Pokemon's offensive stat is halved when calculating the damage to this Pokemon.",
+		shortDesc: "Gains the resistances and STAB boost of Dragon.",
+	},
 	dragonsmaw: {
 		name: "Dragon's Maw",
 		shortDesc: "This Pokemon's offensive stat is multiplied by 1.5 while using a Dragon-type attack.",
@@ -1203,6 +1208,10 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		name: "Pastel Veil",
 		desc: "This Pokemon and its allies cannot be poisoned. Gaining this Ability while this Pokemon or its ally is poisoned cures them. If this Ability is being ignored during an effect that causes poison, this Pokemon is cured immediately but its ally is not.",
 		shortDesc: "This Pokemon and its allies cannot be poisoned. On switch-in, cures poisoned allies.",
+	},
+	perilous: {
+		name: "Perilous",
+		shortDesc: "This Pokemon's attacks are always critical hits.",
 	},
 	perishbody: {
 		name: "Perish Body",
