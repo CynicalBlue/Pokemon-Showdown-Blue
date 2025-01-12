@@ -3076,7 +3076,7 @@ const Moves = {
     },
     secondary: null,
     target: "self",
-    type: "Psychic",
+    type: "Space",
     zMove: { boost: { spd: 1 } },
     contestType: "Beautiful"
   },
@@ -11033,7 +11033,7 @@ const Moves = {
     },
     secondary: null,
     target: "allies",
-    type: "Psychic"
+    type: "Space"
   },
   lunardance: {
     num: 461,
@@ -12268,7 +12268,7 @@ const Moves = {
   meteorbeam: {
     num: 800,
     accuracy: 90,
-    basePower: 120,
+    basePower: 150,
     category: "Special",
     name: "Meteor Beam",
     pp: 10,
@@ -12288,11 +12288,11 @@ const Moves = {
     },
     secondary: null,
     target: "normal",
-    type: "Rock"
+    type: "Space"
   },
   meteormash: {
     num: 309,
-    accuracy: 90,
+    accuracy: 100,
     basePower: 90,
     category: "Physical",
     name: "Meteor Mash",
@@ -12310,6 +12310,26 @@ const Moves = {
     target: "normal",
     type: "Steel",
     contestType: "Cool"
+  },
+  meteorshower: {
+    num: 813,
+    accuracy: 90,
+    basePower: 20,
+    basePowerCallback(pokemon, target, move) {
+      return 20 * move.hit;
+    },
+    category: "Physical",
+    name: "Meteor Shower",
+    pp: 10,
+    priority: 0,
+    flags: { contact: 1, protect: 1, mirror: 1 },
+    multihit: 3,
+    multiaccuracy: true,
+    secondary: null,
+    target: "normal",
+    type: "Space",
+    zMove: { basePower: 120 },
+    maxMove: { basePower: 140 }
   },
   metronome: {
     num: 118,
@@ -15210,7 +15230,6 @@ const Moves = {
       return move.basePower;
     },
     category: "Physical",
-    isNonstandard: "Past",
     name: "Pursuit",
     pp: 20,
     priority: 0,
@@ -18975,6 +18994,25 @@ const Moves = {
     },
     target: "allAdjacentFoes",
     type: "Fairy"
+  },
+  starstorm: {
+    num: 437,
+    accuracy: 90,
+    basePower: 130,
+    category: "Special",
+    name: "Star Storm",
+    pp: 5,
+    priority: 0,
+    flags: { protect: 1, mirror: 1 },
+    self: {
+      boosts: {
+        spa: -2
+      }
+    },
+    secondary: null,
+    target: "normal",
+    type: "Space",
+    contestType: "Beautiful"
   },
   stealthrock: {
     num: 446,

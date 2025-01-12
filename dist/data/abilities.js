@@ -1247,6 +1247,18 @@ const Abilities = {
     rating: 1,
     num: 194
   },
+  entrancing: {
+    onTryHit(pokemon, target, move) {
+      if (move.selfSwitch) {
+        this.add("-immune", pokemon, "[from] ability: Entrancing");
+        return null;
+      }
+    },
+    isBreakable: true,
+    name: "Entrancing",
+    rating: 3,
+    num: 171
+  },
   fairyaura: {
     onStart(pokemon) {
       if (this.suppressingAbility(pokemon))
@@ -3772,6 +3784,14 @@ const Abilities = {
     name: "Reckless",
     rating: 3,
     num: 120
+  },
+  refreshing: {
+    onStart(pokemon) {
+      pokemon.addVolatile("aquaring");
+    },
+    name: "Refreshing",
+    rating: 3,
+    num: 269
   },
   refrigerate: {
     onModifyTypePriority: -1,
