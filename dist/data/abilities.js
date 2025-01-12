@@ -1067,6 +1067,40 @@ const Abilities = {
     rating: 3.5,
     num: 88
   },
+  draconic: {
+    onSourceModifyAtkPriority: 6,
+    onSourceModifyAtk(atk, attacker, defender, move) {
+      if (move.type === "Water" || move.type === "Fire" || move.type === "Grass" || move.type === "Electric" || move.type === "Space") {
+        this.debug("Draconic weaken");
+        return this.chainModify(0.5);
+      }
+    },
+    onSourceModifySpAPriority: 5,
+    onSourceModifySpA(atk, attacker, defender, move) {
+      if (move.type === "Water" || move.type === "Fire" || move.type === "Grass" || move.type === "Electric" || move.type === "Space") {
+        this.debug("Draconic weaken");
+        return this.chainModify(0.5);
+      }
+    },
+    onModifyAtkPriority: 5,
+    onModifyAtk(atk, attacker, defender, move) {
+      if (move.type === "Dragon") {
+        this.debug("Draconic boost");
+        return this.chainModify(1.5);
+      }
+    },
+    onModifySpAPriority: 5,
+    onModifySpA(atk, attacker, defender, move) {
+      if (move.type === "Dragon") {
+        this.debug("Draconic boost");
+        return this.chainModify(1.5);
+      }
+    },
+    isBreakable: true,
+    name: "Draconic",
+    rating: 4,
+    num: 47
+  },
   dragonsmaw: {
     onModifyAtkPriority: 5,
     onModifyAtk(atk, attacker, defender, move) {
@@ -2496,7 +2530,7 @@ const Abilities = {
       }
     },
     name: "Mega Launcher",
-    rating: 3,
+    rating: 4,
     num: 178
   },
   merciless: {
@@ -3107,6 +3141,14 @@ const Abilities = {
     name: "Pastel Veil",
     rating: 2,
     num: 257
+  },
+  perilous: {
+    onModifyCritRatio(critRatio, source, target) {
+      return 5;
+    },
+    name: "Perilous",
+    rating: 4,
+    num: 299
   },
   perishbody: {
     onDamagingHit(damage, target, source, move) {

@@ -213,7 +213,6 @@ const Moves = {
     accuracy: 95,
     basePower: 100,
     category: "Special",
-    isNonstandard: "Past",
     name: "Aeroblast",
     pp: 5,
     priority: 0,
@@ -373,7 +372,6 @@ const Moves = {
     accuracy: 100,
     basePower: 80,
     category: "Physical",
-    isNonstandard: "Past",
     name: "Anchor Shot",
     pp: 20,
     priority: 0,
@@ -560,7 +558,6 @@ const Moves = {
     accuracy: true,
     basePower: 0,
     category: "Status",
-    isNonstandard: "Past",
     name: "Aromatherapy",
     pp: 5,
     priority: 0,
@@ -1510,7 +1507,7 @@ const Moves = {
     name: "Super Blast",
     pp: 10,
     priority: 0,
-    flags: { protect: 1, mirror: 1, bypasssub: 1 },
+    flags: { protect: 1, mirror: 1 },
     secondary: null,
     target: "allAdjacentFoes",
     type: "Normal",
@@ -5777,10 +5774,23 @@ const Moves = {
     pp: 20,
     priority: 0,
     flags: { protect: 1, reflectable: 1, mirror: 1, sound: 1, bypasssub: 1 },
-    onHit(target, source, move) {
-      const success = this.boost({ spe: -1 }, target, source);
-      if (!success && !target.hasAbility("mirrorarmor")) {
-        delete move.selfSwitch;
+    condition: {
+      noCopy: true,
+      onStart(pokemon, source, effect) {
+        if (pokemon.volatiles["dynamax"]) {
+          delete pokemon.volatiles["torment"];
+          return false;
+        }
+        if (effect?.id === "gmaxmeltdown")
+          this.effectState.duration = 3;
+        this.add("-start", pokemon, "Torment");
+      },
+      onEnd(pokemon) {
+        this.add("-end", pokemon, "Torment");
+      },
+      onDisableMove(pokemon) {
+        if (pokemon.lastMove && pokemon.lastMove.id !== "struggle")
+          pokemon.disableMove(pokemon.lastMove.id);
       }
     },
     selfSwitch: true,
@@ -6596,7 +6606,6 @@ const Moves = {
       return Math.floor((255 - pokemon.happiness) * 10 / 25) || 1;
     },
     category: "Physical",
-    isNonstandard: "Past",
     name: "Frustration",
     pp: 20,
     priority: 0,
@@ -15899,7 +15908,6 @@ const Moves = {
       return Math.floor(pokemon.happiness * 10 / 25) || 1;
     },
     category: "Physical",
-    isNonstandard: "Past",
     name: "Return",
     pp: 20,
     priority: 0,
@@ -19660,7 +19668,10 @@ const Moves = {
     pp: 20,
     priority: 0,
     flags: { protect: 1, mirror: 1 },
-    onModifyMove(move) {
+    onModifyMove(move, pokemon) {
+      if (pokemon.getStat("atk", false, true) > pokemon.getStat("spa", false, true)) {
+        move.category = "Physical";
+      }
       if (!move.ignoreImmunity)
         move.ignoreImmunity = {};
       if (move.ignoreImmunity !== true) {
