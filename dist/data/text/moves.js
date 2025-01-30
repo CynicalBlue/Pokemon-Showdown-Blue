@@ -4984,6 +4984,11 @@ const MovesText = {
     },
     prepare: "  [POKEMON] whipped up a whirlwind!"
   },
+  reconstitute: {
+    name: "Reconstitute",
+    desc: "The user restores 1/2 of its maximum HP, rounded half up.",
+    shortDesc: "Heals the user by 50% of its max HP."
+  },
   recover: {
     name: "Recover",
     desc: "The user restores 1/2 of its maximum HP, rounded half up.",

@@ -661,7 +661,7 @@ export const AbilitiesText: {[k: string]: AbilityText} = {
 		shortDesc: "This Pokemon's weight is quadrupled.",
 	},
 	honest: {
-		name: "Sheer Force",
+		name: "Honest",
 		desc: "This Pokemon's attacks with no secondary effects have their power multiplied by 1.5x.  .5x power is applied, otherwise.",
 		shortDesc: "This Pokemon's attacks with no secondary effects have 1.5x power (.5x otherwise).",
 	},

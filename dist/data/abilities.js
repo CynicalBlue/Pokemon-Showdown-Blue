@@ -1851,6 +1851,8 @@ const Abilities = {
     onBasePower(basePower, pokemon, target, move) {
       if (!move.hasSheerForce)
         return this.chainModify(1.5);
+      if (move.hasSheerForce)
+        return this.chainModify(0.5);
     },
     name: "Honest",
     rating: 4,

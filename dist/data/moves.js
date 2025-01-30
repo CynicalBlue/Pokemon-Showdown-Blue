@@ -15697,6 +15697,22 @@ const Moves = {
     type: "Normal",
     contestType: "Cool"
   },
+  reconstitute: {
+    num: 105,
+    accuracy: true,
+    basePower: 0,
+    category: "Status",
+    name: "Reconstitute",
+    pp: 5,
+    priority: 0,
+    flags: { snatch: 1, heal: 1 },
+    heal: [1, 2],
+    secondary: null,
+    target: "self",
+    type: "Space",
+    zMove: { effect: "clearnegativeboost" },
+    contestType: "Clever"
+  },
   recover: {
     num: 105,
     accuracy: true,
@@ -18475,7 +18491,7 @@ const Moves = {
     pp: 5,
     priority: 0,
     flags: { snatch: 1, heal: 1, sound: 1 },
-    heal: [75, 100],
+    heal: [1, 2],
     secondary: null,
     target: "self",
     type: "Sound",

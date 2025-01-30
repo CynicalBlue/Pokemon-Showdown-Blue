@@ -49933,6 +49933,7 @@ export const Learnsets: {[speciesid: string]: LearnsetData} = {
 			psybeam: ["9M"],
 			psychup: ["7M", "6M", "5M", "4M"],
 			raindance: ["9M", "9L13", "7M", "7L13", "6M", "6L13", "5M", "5L13", "4M", "4L13"],
+			reconstitute: ["8M"],
 			rest: ["9M", "7M", "6M", "5M", "4M"],
 			return: ["7M", "6M", "5M", "4M"],
 			round: ["7M", "6M", "5M"],

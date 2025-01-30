@@ -659,8 +659,8 @@ const AbilitiesText = {
   },
   honest: {
     name: "Sheer Force",
-    desc: "This Pokemon's attacks with no secondary effects have their power multiplied by 1.5",
-    shortDesc: "This Pokemon's attacks with no secondary effects have 1.5x power."
+    desc: "This Pokemon's attacks with no secondary effects have their power multiplied by 1.5x.  .5x power is applied, otherwise.",
+    shortDesc: "This Pokemon's attacks with no secondary effects have 1.5x power (.5x otherwise)."
   },
   honeygather: {
     name: "Honey Gather",
